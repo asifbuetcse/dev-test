@@ -1,0 +1,23 @@
+<div class="container">
+  <form [formGroup]="userForm">
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" class="form-control" id="email" formControlName="email">
+    </div>
+    <div class="form-group">
+      <label for="mobile">Mobile</label>
+      <input type="tel" class="form-control" id="mobile" formControlName="mobile">
+    </div>
+    <div class="form-group form-check">
+      <input type="checkbox" class="form-check-input" id="is_active" formControlName="isActive">
+      <label class="form-check-label" for="is_active">Is Active</label>
+    </div>
+    <div class="form-group">
+      <label for="name">Role</label>
+      <input type="text" class="form-control" id="role" formControlName="role">
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="save()">Save</button>
+    <!-- <button type="button" class="btn btn-secondary" (click)="cancel()">Cancel</button> -->
+  </form>
+
+</div>
