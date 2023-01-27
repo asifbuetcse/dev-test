@@ -1,5 +1,4 @@
 ﻿using dev_test.DTOs;
-using System.Linq;
 
 namespace dev_test.Repositories.Contracts
 {

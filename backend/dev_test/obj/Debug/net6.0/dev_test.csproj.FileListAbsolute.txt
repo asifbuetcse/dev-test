@@ -15,6 +15,7 @@ C:\Users\asifb\OneDrive\Desktop\Coding_test\backend\dev_test\bin\Debug\net6.0\En
 C:\Users\asifb\OneDrive\Desktop\Coding_test\backend\dev_test\bin\Debug\net6.0\EntityFramework.dll
 C:\Users\asifb\OneDrive\Desktop\Coding_test\backend\dev_test\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\asifb\OneDrive\Desktop\Coding_test\backend\dev_test\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\asifb\OneDrive\Desktop\Coding_test\backend\dev_test\bin\Debug\net6.0\Microsoft.DotNet.PlatformAbstractions.dll
 C:\Users\asifb\OneDrive\Desktop\Coding_test\backend\dev_test\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
 C:\Users\asifb\OneDrive\Desktop\Coding_test\backend\dev_test\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
 C:\Users\asifb\OneDrive\Desktop\Coding_test\backend\dev_test\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
@@ -26,6 +27,7 @@ C:\Users\asifb\OneDrive\Desktop\Coding_test\backend\dev_test\bin\Debug\net6.0\Mi
 C:\Users\asifb\OneDrive\Desktop\Coding_test\backend\dev_test\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
 C:\Users\asifb\OneDrive\Desktop\Coding_test\backend\dev_test\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
 C:\Users\asifb\OneDrive\Desktop\Coding_test\backend\dev_test\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\asifb\OneDrive\Desktop\Coding_test\backend\dev_test\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
 C:\Users\asifb\OneDrive\Desktop\Coding_test\backend\dev_test\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
 C:\Users\asifb\OneDrive\Desktop\Coding_test\backend\dev_test\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Users\asifb\OneDrive\Desktop\Coding_test\backend\dev_test\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
@@ -90,5 +92,3 @@ C:\Users\asifb\OneDrive\Desktop\Coding_test\backend\dev_test\obj\Debug\net6.0\re
 C:\Users\asifb\OneDrive\Desktop\Coding_test\backend\dev_test\obj\Debug\net6.0\dev_test.pdb
 C:\Users\asifb\OneDrive\Desktop\Coding_test\backend\dev_test\obj\Debug\net6.0\dev_test.genruntimeconfig.cache
 C:\Users\asifb\OneDrive\Desktop\Coding_test\backend\dev_test\obj\Debug\net6.0\ref\dev_test.dll
-C:\Users\asifb\OneDrive\Desktop\Coding_test\backend\dev_test\bin\Debug\net6.0\Microsoft.DotNet.PlatformAbstractions.dll
-C:\Users\asifb\OneDrive\Desktop\Coding_test\backend\dev_test\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll

@@ -2,6 +2,7 @@
   <table class="table table-striped">
     <thead>
       <tr>
+        <th>Name</th>
         <th>Email</th>
         <th>Mobile</th>
         <th>Status</th>
@@ -10,6 +11,7 @@
     </thead>
     <tbody>
       <tr *ngFor="let user of userList">
+        <td>{{user.name}}</td>
         <td>{{user.email}}</td>
         <td>{{user.mobile}}</td>
         <td>{{user.isActive ? 'Active' : 'Inactive'}}</td>

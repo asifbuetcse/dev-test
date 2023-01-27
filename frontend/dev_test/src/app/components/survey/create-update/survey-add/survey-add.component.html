@@ -1,0 +1,28 @@
+<div class="container">
+  <form [formGroup]="surveyForm" (ngSubmit)="save()">
+    <div class="form-group">
+      <label for="title">Survey Title</label>
+      <input type="text" class="form-control" id="title" formControlName="Title">
+    </div>
+    <div formArrayName="Questions" class="mt-3">
+      <div *ngFor="let question of getQuestionControls().controls; let i = index" [formGroupName]="i">
+        <label>Question {{i+1}}</label>
+        <input type="text" formControlName="Text" class="form-control mb-3">
+        <div formArrayName="Answers" class="d-flex flex-wrap">
+          <div>{{getAnswerControls(question.value).controls}}</div>
+          <div *ngFor="let answer of getAnswerControls(question.value); let j = index" [formGroupName]="j"
+            class="form-check mr-3 mb-3">
+            <input class="form-check-input" type="radio" formControlName="isCorrect" [value]="j"
+              (change)="selectAnswer(i, j)">
+            <input type="text" formControlName="Text" class="form-control">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex justify-content-end">
+      <button type="submit" class="btn btn-primary mr-3">Save</button>
+      <button type="button" class="btn btn-secondary" (click)="cancel()">Cancel</button>
+    </div>
+  </form>
+
+</div>

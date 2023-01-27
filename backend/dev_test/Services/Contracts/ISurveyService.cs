@@ -4,7 +4,7 @@ namespace dev_test.Services.Contracts
 {
     public interface ISurveyService
     {
-        public IEnumerable<SurveyComposite> GetSurveys();
+        public IEnumerable<Survey> GetSurveys();
         public void PostSurveys(SurveyComposite survey);
     }
 }

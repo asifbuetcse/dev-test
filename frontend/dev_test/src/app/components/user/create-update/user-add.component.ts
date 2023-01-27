@@ -10,6 +10,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class UserAddComponent implements OnInit {
   userForm = new FormGroup({
+    name: new FormControl(),
     email: new FormControl(),
     mobile: new FormControl(),
     isActive: new FormControl(),
@@ -25,6 +26,7 @@ export class UserAddComponent implements OnInit {
 
   cancel() {
     this.userForm = new FormGroup({
+      name: new FormControl(),
       email: new FormControl(),
       mobile: new FormControl(),
       isActive: new FormControl(),
