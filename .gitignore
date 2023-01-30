@@ -6,3 +6,6 @@ Release/
 node_modules/
 **/bin/*
 **/node_modules/*
+**/.vs/*
+**/obj/*
+.vs/

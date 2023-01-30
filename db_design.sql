@@ -28,6 +28,7 @@ CREATE TABLE [user]
 (
     id INT PRIMARY KEY  IDENTITY(1,1),
 	name VARCHAR(55) NOT NULL,
+	password VARCHAR(55) NOT NULL,
     email VARCHAR(255) NOT NULL UNIQUE,
     mobile VARCHAR(15) NOT NULL,
     isActive BIT NOT NULL,
