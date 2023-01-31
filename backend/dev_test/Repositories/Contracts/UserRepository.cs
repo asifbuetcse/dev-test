@@ -1,4 +1,5 @@
 ﻿using dev_test.DTOs;
+using System.Transactions;
 
 namespace dev_test.Repositories.Contracts
 {
@@ -19,8 +20,21 @@ namespace dev_test.Repositories.Contracts
 
         public void PostUser(User user)
         {
-            _databaseContext.Add<User>(user);
-            _databaseContext.SaveChanges();
+            using (var transaction = new TransactionScope())
+            {
+                try
+                {
+                    _databaseContext.Add<User>(user);
+                    _databaseContext.SaveChanges();
+                    transaction.Complete();
+                }
+                catch (Exception)
+                {
+                    transaction.Current.SetAborted();
+                    throw;
+                }
+            }
+
         }
     }
 }
