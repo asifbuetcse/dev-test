@@ -2,7 +2,6 @@
 using dev_test.Services.Contracts;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System.Data;
 
 namespace dev_test.Controllers
 {
@@ -17,14 +16,14 @@ namespace dev_test.Controllers
             _userService = userService;
         }
         [HttpGet]
-        public ActionResult<IEnumerable<User>> Get()
+        public ActionResult<IEnumerable<UserDto>> Get()
         {
             var users = _userService.GetUsers();
             return Ok(users);
         }
         [HttpPost]
         [Authorize(Roles = "admin")]
-        public bool Post([FromBody] User user) 
+        public bool Post([FromBody] UserDto user) 
         {
             try
             {

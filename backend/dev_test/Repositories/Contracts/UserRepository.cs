@@ -1,4 +1,4 @@
-﻿using dev_test.DTOs;
+﻿using dev_test.Entities;
 using System.Transactions;
 
 namespace dev_test.Repositories.Contracts
@@ -14,8 +14,7 @@ namespace dev_test.Repositories.Contracts
         public IEnumerable<User> GetUsers()
         {
             _databaseContext.Database.EnsureCreated();
-            return _databaseContext.User.ToList();
-            //return new List<User>();
+            return _databaseContext.Users.ToList();
         }
 
         public void PostUser(User user)
@@ -30,7 +29,7 @@ namespace dev_test.Repositories.Contracts
                 }
                 catch (Exception)
                 {
-                    transaction.Current.SetAborted();
+                    Transaction.Current.Rollback();
                     throw;
                 }
             }

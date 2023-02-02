@@ -1,15 +1,20 @@
-﻿using dev_test.DTOs;
+﻿using dev_test.Entities;
 using Microsoft.EntityFrameworkCore;
+//using Microsoft.EntityFrameworkCore;
+//using System.Data.Entity;
 
 namespace dev_test
 {
     public class DatabaseContext : DbContext
     {
         public DatabaseContext(DbContextOptions<DatabaseContext> options) : base(options){}
-        public DbSet<User> User { get; set; }
-        public DbSet<Survey> Survey { get; set; }
-        public DbSet<Question> Question { get; set; }
-        public DbSet<Answer> Answer { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Survey> Surveys { get; set; }
+        public virtual DbSet<Question> Questions { get; set; }
+        public virtual DbSet<Answer> Answers { get; set; }
+        public virtual DbSet<Invitation> Invitations { get; set; }
+        public virtual DbSet<Submission> Submissions { get; set; }
+        public virtual DbSet<SubmissionDetail> SubmissionDetails { get; set; }
     }
 }
 

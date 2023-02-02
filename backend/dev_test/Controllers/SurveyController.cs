@@ -1,5 +1,4 @@
 ﻿using dev_test.DTOs;
-using dev_test.Services;
 using dev_test.Services.Contracts;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,13 +14,13 @@ namespace dev_test.Controllers
             _surveyService = surveyService;
         }
         [HttpGet]
-        public IEnumerable<Survey> GetSurveys()
+        public IEnumerable<SurveyDto> GetSurveys()
         {
             return _surveyService.GetSurveys();
         }
 
         [HttpPost]
-        public bool PostSurveys(SurveyComposite surveyComposite)
+        public bool PostSurveys(SurveyCompositeDto surveyComposite)
         {
             try
             {

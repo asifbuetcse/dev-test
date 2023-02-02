@@ -1,4 +1,5 @@
-﻿using dev_test.DTOs;
+﻿using AutoMapper;
+using dev_test.DTOs;
 using dev_test.Repositories.Contracts;
 using dev_test.Services.Contracts;
 
@@ -7,19 +8,24 @@ namespace dev_test.Services
     public class UserService : IUserService
     {
         public IUserRepository _userRepository;
-        public UserService(IUserRepository userRepository)
+        private readonly IMapper _mapper;
+        public UserService(IUserRepository userRepository, IMapper mapper)
         {
             _userRepository = userRepository;
+            _mapper = mapper;
         }
 
-        public IEnumerable<User> GetUsers()
+        public IEnumerable<UserDto> GetUsers()
         {
-            return _userRepository.GetUsers();
+
+            var user = _userRepository.GetUsers();
+            var userDtos = _mapper.Map<IEnumerable<UserDto>>(user);
+            return userDtos;
         }
 
-        public void PostUser(User user)
+        public void PostUser(UserDto user)
         {
-            _userRepository.PostUser(user);
+            //_userRepository.PostUser(user);
         }
     }
 }

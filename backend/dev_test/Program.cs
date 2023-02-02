@@ -20,6 +20,10 @@ builder.Services.AddScoped<ISurveyRepository, SurveyRepository>();
 builder.Services.AddScoped<ISurveyService, SurveyService>();
 builder.Services.AddCors();
 builder.Services.AddControllers();
+
+builder.Services.AddAutoMapper(typeof(Program));
+
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(option =>
 {
@@ -80,5 +84,6 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
+
 
 app.Run();

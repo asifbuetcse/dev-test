@@ -23,7 +23,7 @@ namespace dev_test.Controllers
 
         [AllowAnonymous]
         [HttpPost]
-        public ActionResult Login([FromBody] User userLogin)
+        public ActionResult Login([FromBody] UserDto userLogin)
         {
             var user = Authenticate(userLogin);
             if (user != null)
@@ -34,7 +34,7 @@ namespace dev_test.Controllers
             return NotFound("user not found");
         }
 
-        private string GenerateToken(User user)
+        private string GenerateToken(UserDto user)
         {
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
@@ -52,7 +52,7 @@ namespace dev_test.Controllers
 
         }
 
-        private User? Authenticate(User userLogin)
+        private UserDto? Authenticate(UserDto userLogin)
         {
             var currentUser = _userService.GetUsers().FirstOrDefault(x => x.Email.ToLower() ==
                 userLogin.Email.ToLower() && x.Password == userLogin.Password);

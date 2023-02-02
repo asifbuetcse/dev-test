@@ -4,7 +4,7 @@ namespace dev_test.Services.Contracts
 {
     public interface IUserService
     {
-        public IEnumerable<User> GetUsers();
-        public void PostUser(User user);
+        public IEnumerable<UserDto> GetUsers();
+        public void PostUser(UserDto user);
     }
 }

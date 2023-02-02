@@ -1,5 +1,4 @@
-﻿using dev_test.DTOs;
-
+﻿using dev_test.Entities;
 namespace dev_test.Repositories.Contracts
 {
     public interface IUserRepository
