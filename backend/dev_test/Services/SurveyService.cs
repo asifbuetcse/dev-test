@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using dev_test.DTOs;
+using dev_test.Entities;
 using dev_test.Repositories.Contracts;
 using dev_test.Services.Contracts;
 
@@ -23,7 +24,7 @@ namespace dev_test.Services
 
         public void PostSurveys(SurveyCompositeDto survey)
         {
-            //_surveyRepository.PostSurveys(survey);
+            _surveyRepository.PostSurveys(survey);
         }
     }
 }

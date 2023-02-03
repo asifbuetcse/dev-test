@@ -23,7 +23,7 @@ namespace dev_test.Repositories.Contracts
             {
                 try
                 {
-                    _databaseContext.Add<User>(user);
+                    _databaseContext.Add(user);
                     _databaseContext.SaveChanges();
                     transaction.Complete();
                 }
