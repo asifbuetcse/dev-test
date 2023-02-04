@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace dev_test.Controllers
 {
     [ApiController]
-    [Authorize]
+    //[Authorize]
     [Route("api/[controller]")]
     public class UserController : Controller
     {
@@ -22,7 +22,7 @@ namespace dev_test.Controllers
             return Ok(users);
         }
         [HttpPost]
-        [Authorize(Roles = "admin")]
+        //[Authorize(Roles = "admin")]
         public bool Post([FromBody] UserDto user) 
         {
             try

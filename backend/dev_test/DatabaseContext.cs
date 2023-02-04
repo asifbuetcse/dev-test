@@ -1,7 +1,6 @@
 ﻿using dev_test.Entities;
 using Microsoft.EntityFrameworkCore;
 //using Microsoft.EntityFrameworkCore;
-//using System.Data.Entity;
 
 namespace dev_test
 {

@@ -12,9 +12,11 @@ export class HttpClientService {
   constructor(private http: HttpClient) { }
   baseUrl = "https://localhost:7124/api/";
   getData(url: string) {
-    return this.http.get(this.baseUrl + url, { headers: this.headers });
+    return this.http.get(this.baseUrl + url);
+    //return this.http.get(this.baseUrl + url, { headers: this.headers });
   }
   postData(url: string, data: any) {
-    return this.http.post(this.baseUrl + url, data, { headers: this.headers });
+    return this.http.post(this.baseUrl + url, data);
+    //return this.http.post(this.baseUrl + url, data, { headers: this.headers });
   }
 }

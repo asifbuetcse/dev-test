@@ -12,7 +12,7 @@ using dev_test;
 namespace devtest.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20230202163658_Initial")]
+    [Migration("20230204050019_Initial")]
     partial class Initial
     {
         /// <inheritdoc />

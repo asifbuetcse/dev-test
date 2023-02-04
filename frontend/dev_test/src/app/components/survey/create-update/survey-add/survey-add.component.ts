@@ -11,114 +11,46 @@ export class SurveyAddComponent implements OnInit {
   _client: HttpClientService;
   surveyForm = new FormGroup({
     Title: new FormControl(""),
+    noOfQuestions: new FormControl(""),
     Questions: new FormArray(
       [
-        new FormGroup(
-          {
-            Text: new FormControl(""),
-            Answers: new FormArray(
-              [
-                new FormGroup(
-                  {
-                    Text: new FormControl(""),
-                    isCorrect: new FormControl(false),
-                  }
-                ),
-                new FormGroup(
-                  {
-                    Text: new FormControl(""),
-                    isCorrect: new FormControl(false),
-                  }
-                ),
-                new FormGroup(
-                  {
-                    Text: new FormControl(""),
-                    isCorrect: new FormControl(false),
-                  }
-                ),
-                new FormGroup(
-                  {
-                    Text: new FormControl(""),
-                    isCorrect: new FormControl(false),
-                  }
-                ),
-              ]
-            )
-          }
-        ),
-        new FormGroup(
-          {
-            Text: new FormControl(""),
-            Answers: new FormArray(
-              [
-                new FormGroup(
-                  {
-                    Text: new FormControl(""),
-                    isCorrect: new FormControl(false),
-                  }
-                ),
-                new FormGroup(
-                  {
-                    Text: new FormControl(""),
-                    isCorrect: new FormControl(false),
-                  }
-                ),
-                new FormGroup(
-                  {
-                    Text: new FormControl(""),
-                    isCorrect: new FormControl(false),
-                  }
-                ),
-                new FormGroup(
-                  {
-                    Text: new FormControl(""),
-                    isCorrect: new FormControl(false),
-                  }
-                ),
-              ]
-            )
-          }
-        ),
-        new FormGroup(
-          {
-            Text: new FormControl(""),
-            Answers: new FormArray(
-              [
-                new FormGroup(
-                  {
-                    Text: new FormControl(""),
-                    isCorrect: new FormControl(false),
-                  }
-                ),
-                new FormGroup(
-                  {
-                    Text: new FormControl(""),
-                    isCorrect: new FormControl(false),
-                  }
-                ),
-                new FormGroup(
-                  {
-                    Text: new FormControl(""),
-                    isCorrect: new FormControl(false),
-                  }
-                ),
-                new FormGroup(
-                  {
-                    Text: new FormControl(""),
-                    isCorrect: new FormControl(false),
-                  }
-                ),
-              ]
-            )
-          }
-        ),
+
       ]
     ),
-  });
+  },
+  );
 
   constructor(client: HttpClientService) { this._client = client }
 
   ngOnInit(): void {
+  }
+
+  addQuestion() {
+    const questions = this.surveyForm.get("Questions") as FormArray;
+    questions.push(
+      this.createQuestionFormGroup()
+    )
+    console.log(questions);
+  }
+
+  createAnswerFormGroup(count: number): FormArray {
+    var x = new FormArray([]);
+    for (let i = 0; i < count; i++) {
+      x.push(new FormGroup(
+        {
+          'Text': new FormControl(""),
+          'isCorrect': new FormControl(false),
+        }))
+    }
+    console.log(x);
+    return x;
+  }
+
+  createQuestionFormGroup(): FormGroup {
+    return new FormGroup({
+      'Text': new FormControl(''),
+      'Answers': this.createAnswerFormGroup(4)
+    })
   }
 
   getQuestionControls() {
@@ -126,8 +58,8 @@ export class SurveyAddComponent implements OnInit {
   }
 
   getAnswerControls(question: any) {
-    console.log(question['Answers'] as FormArray);
-    return question['Answers'];
+    console.log((question.controls['Answers'] as FormArray).controls);
+    return question.controls['Answers'] as FormArray;
   }
 
   selectAnswer(i: number, j: number) {
@@ -140,111 +72,5 @@ export class SurveyAddComponent implements OnInit {
   }
 
   cancel() {
-    this.surveyForm = new FormGroup({
-      title: new FormControl(),
-      Questions: new FormArray(
-        [
-          new FormGroup(
-            {
-              Text: new FormControl(""),
-              Answers: new FormArray(
-                [
-                  new FormGroup(
-                    {
-                      Text: new FormControl(""),
-                      isCorrect: new FormControl(false),
-                    }
-                  ),
-                  new FormGroup(
-                    {
-                      Text: new FormControl(""),
-                      isCorrect: new FormControl(false),
-                    }
-                  ),
-                  new FormGroup(
-                    {
-                      Text: new FormControl(""),
-                      isCorrect: new FormControl(false),
-                    }
-                  ),
-                  new FormGroup(
-                    {
-                      Text: new FormControl(""),
-                      isCorrect: new FormControl(false),
-                    }
-                  ),
-                ]
-              )
-            }
-          ),
-          new FormGroup(
-            {
-              Text: new FormControl(""),
-              Answers: new FormArray(
-                [
-                  new FormGroup(
-                    {
-                      Text: new FormControl(""),
-                      isCorrect: new FormControl(false),
-                    }
-                  ),
-                  new FormGroup(
-                    {
-                      Text: new FormControl(""),
-                      isCorrect: new FormControl(false),
-                    }
-                  ),
-                  new FormGroup(
-                    {
-                      Text: new FormControl(""),
-                      isCorrect: new FormControl(false),
-                    }
-                  ),
-                  new FormGroup(
-                    {
-                      Text: new FormControl(""),
-                      isCorrect: new FormControl(false),
-                    }
-                  ),
-                ]
-              )
-            }
-          ),
-          new FormGroup(
-            {
-              Text: new FormControl(""),
-              Answers: new FormArray(
-                [
-                  new FormGroup(
-                    {
-                      Text: new FormControl(""),
-                      isCorrect: new FormControl(false),
-                    }
-                  ),
-                  new FormGroup(
-                    {
-                      Text: new FormControl(""),
-                      isCorrect: new FormControl(false),
-                    }
-                  ),
-                  new FormGroup(
-                    {
-                      Text: new FormControl(""),
-                      isCorrect: new FormControl(false),
-                    }
-                  ),
-                  new FormGroup(
-                    {
-                      Text: new FormControl(""),
-                      isCorrect: new FormControl(false),
-                    }
-                  ),
-                ]
-              )
-            }
-          ),
-        ]
-      ),
-    });
   }
 }
